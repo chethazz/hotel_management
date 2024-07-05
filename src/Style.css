@@ -12,3 +12,30 @@
 .main {
   flex: 1;
 }
+
+.table-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.table-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.table-number {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.customer-count {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5px;
+}
