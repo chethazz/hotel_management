@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Style.css";
 
 const Main = () => {
@@ -13,6 +13,16 @@ const Main = () => {
     { id: 8, customers: 3 },
     { id: 9, customers: 1 },
   ];
+
+  const tabsData = [
+    { id: 1, title: "Starters" },
+    { id: 2, title: "Main Course" },
+    { id: 3, title: "Dessert" },
+    { id: 4, title: "Beverages" },
+  ];
+
+  const [activeTab, setActiveTab] = useState(tabsData[0].id);
+
   return (
     <div className="main">
       <h1>Cashier</h1>
@@ -25,6 +35,17 @@ const Main = () => {
               <div>{table.customers}</div>
             </div>
           </div>
+        ))}
+      </div>
+      <div className="tabs">
+        {tabsData.map((tab) => (
+          <button
+            key={tab.id}
+            className={`tab ${activeTab === tab.id ? "active" : ""}`}
+            onClick={() => setActiveTab(tab.id)}
+          >
+            {tab.title}
+          </button>
         ))}
       </div>
     </div>
